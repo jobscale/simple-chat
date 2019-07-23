@@ -1,0 +1,8 @@
+{
+    "version": 0,
+    "name": "simple-chat",
+    "alias": "simple-chat",
+    "builds": [
+        { "src": "*.js", "use": "@now/node" }
+    ]
+}
