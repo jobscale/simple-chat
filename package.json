@@ -1,14 +1,17 @@
 {
-  "name": "chatapp",
+  "name": "simple-chat",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "forked from https://github.com/ezesundayeze/anonymouse-realtime-chat-app",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node .",
+    "build": "docker build . -t local/chat:bionic",
+    "docker": "docker run --rm -d --network=host local/chat:bionic",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "inspect": "node --inspect .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.3",
@@ -21,5 +24,12 @@
     "passport-local": "^1.0.0",
     "simple-datetime-formater": "^1.0.8",
     "socket.io": "^2.2.0"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "author": "Eze Sunday <mailsforeze@gmail.com>",
+  "license": "ISC"
 }
