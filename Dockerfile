@@ -1,10 +1,10 @@
-FROM jobscale/node:bionic
-SHELL ["bash", "-c"]
+FROM jobscale/node
 
 WORKDIR /root
-COPY . .
 
-RUN apt install -y netcat
+RUN apt-get update && apt-get install -y netcat
+
+COPY . .
 RUN . .nvm/nvm.sh && npm i
 
 EXPOSE $PORT
