@@ -1,11 +1,9 @@
-FROM jobscale/node
-
+FROM node
 WORKDIR /root
-
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y netcat
-
 COPY . .
-RUN . .nvm/nvm.sh && npm i
-
+RUN npm i --production
+RUN rm -fr /var/lib/apt/lists/*
 EXPOSE $PORT
 CMD ["./daemon"]
