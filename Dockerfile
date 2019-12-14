@@ -6,4 +6,4 @@ COPY . .
 RUN npm i --production
 RUN rm -fr /var/lib/apt/lists/*
 EXPOSE $PORT
-CMD ["./daemon"]
+CMD ["./start.sh"]
