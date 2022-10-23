@@ -2,11 +2,12 @@
 set -eu
 
 {
-  docker run --rm --name mongo --network vnet -d mongo
+  mongo() {
+    docker run --rm --name mongo --network vnet -i mongo
+  }
+  mongo &
 
   docker build . -t simple-chat:local \
   && docker run --rm --name simple-chat --network vnet \
   -p 3000:3000 -it simple-chat:local
-
-  docker stop mongo
 }
