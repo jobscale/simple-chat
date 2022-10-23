@@ -23,7 +23,7 @@ app.use('/chats', chatRouter);
 app.use('/login', loginRouter);
 
 // set the express.static middleware
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/docs`));
 
 // integrating socketio
 socket = io(http);
