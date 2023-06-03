@@ -89,3 +89,4 @@ typings/
 .idea/
 .c9/
 
+package-lock.json
