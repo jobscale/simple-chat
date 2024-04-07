@@ -1,7 +1,7 @@
-FROM node:lts-bullseye-slim
+FROM node:lts-bookworm-slim
 WORKDIR /root
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y netcat
+RUN apt-get update && apt-get install -y netcat-openbsd
 COPY --chown=node:staff package.json .
 RUN npm i --omit=dev
 COPY --chown=node:staff . .
