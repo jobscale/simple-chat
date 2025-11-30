@@ -1,6 +1,6 @@
 {
   "name": "simple-chat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "forked from https://github.com/ezesundayeze/anonymouse-realtime-chat-app",
   "type": "module",
   "main": "index.js",
